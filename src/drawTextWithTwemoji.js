@@ -1,6 +1,7 @@
 const splitEntitiesFromText = require('./utils/splitEntitiesFromText');
 const loadTwemojiImageByUrl = require('./utils/loadTwemojiImageByUrl');
 const getFontSizeByCssFont = require('./utils/getFontSizeByCssFont');
+const drawCenteredImageInRect = require('./utils/drawCenteredImageInRect');
 
 const measureText = require('./measureText');
 const { Canvas } = require('canvas');
@@ -63,11 +64,11 @@ module.exports = async function drawTextWithEmoji (
       // Emoji case
       const emoji = await loadTwemojiImageByUrl(entity.url);
 
-      context.drawImage(
+      await drawCenteredImageInRect(
+        context,
         emoji,
         textLeftMargin + x + currentWidth + emojiSideMargin,
         y + emojiTopMargin - fontSize - baseLine,
-        fontSize,
         fontSize
       );
 
