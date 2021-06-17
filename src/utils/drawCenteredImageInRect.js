@@ -1,5 +1,3 @@
-const { drawImage } = require('canvas');
-
 module.exports = async function drawCenteredImageInRect(context, image, startX, startY, scale) {
   
   var imageHeight = getScale(image.height, image.width).height
@@ -8,7 +6,7 @@ module.exports = async function drawCenteredImageInRect(context, image, startX, 
   var imageStartX = (startX + (scale/2)) - (imageHeight/2);
   var imageStartY = (startY + (scale/2)) - (imageWidth/2);
 
-  drawImage(image, imageStartX, imageStartY, imageHeight, imageWidth);
+  context.drawImage(image, imageStartX, imageStartY, imageHeight, imageWidth);
   
   function getScale(height, width) {
     if (height > width) return {width: scale, height: ((width*scale)/height)}
