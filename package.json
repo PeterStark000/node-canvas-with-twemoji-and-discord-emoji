@@ -10,7 +10,7 @@
   "author": "flazepe",
   "dependencies": {
     "canvas": "^2.7.0",
-    "twemoji": "^13.0.1"
+    "twemoji": "^14.0.0"
   },
   "license": "MIT",
   "repository": {
